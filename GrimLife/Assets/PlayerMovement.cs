@@ -11,7 +11,7 @@
         public float jumpForce;
         public float jumpCooldown;
         public float airMultiplier;
-        bool readyToJump;
+        public bool readyToJump;
 
         [HideInInspector] public float walkSpeed;
         [HideInInspector] public float sprintSpeed;
@@ -19,7 +19,7 @@
         [Header("Ground Check")]
         public float playerHeight;
         public LayerMask whatIsGround;
-        bool grounded;
+        public bool grounded;
 
         Vector2 movementInput = new Vector2();
         Vector3 moveDirection;
@@ -38,7 +38,7 @@
         private void Update()
         {
             // ground check
-            grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
+            grounded = CheckGrounded();
 
         SpeedControl();
 
@@ -105,4 +105,13 @@
         {
             readyToJump = true;
         }
-    }
+
+        bool CheckGrounded()
+        {
+            // Raycast down from the player's position to check if it's grounded
+            bool isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
+
+            return isGrounded;
+        }
+
+}
