@@ -33,8 +33,8 @@ namespace GrimLife
 
         private void Update()
         {
-            Vector2 viewDirection = player.position - new Vector3(Camera.main.transform.position.x, player.position.y, Camera.main.transform.position.z);
-            orientation.forward = viewDirection.normalized;
+            Vector2 viewDirection = (player.position - Camera.main.transform.position).normalized;
+            orientation.LookAt(viewDirection);
 
             //rotate player object
             Vector3 inputDirection = orientation.forward * movementInput.y + orientation.right * movementInput.x;
