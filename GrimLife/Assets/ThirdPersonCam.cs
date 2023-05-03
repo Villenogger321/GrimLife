@@ -26,17 +26,16 @@ namespace GrimLife
 
         public void OnMove(InputAction.CallbackContext context)
         {
-            //Debug.Log("Movement input: " + context);
-
             movementInput = context.ReadValue<Vector2>();
         }
 
         private void Update()
         {
-            Vector2 viewDirection = (player.position - Camera.main.transform.position).normalized;
-            orientation.LookAt(viewDirection);
+            Vector3 camToPlayer = player.position - new Vector3(Camera.main.transform.position.x, player.position.y, Camera.main.transform.position.z);
+            Vector3 newOrientationPos = player.position + camToPlayer.normalized;
+            orientation.position = newOrientationPos;
+            orientation.forward = -camToPlayer.normalized;
 
-            //rotate player object
             Vector3 inputDirection = orientation.forward * movementInput.y + orientation.right * movementInput.x;
 
             if (inputDirection != Vector3.zero)
