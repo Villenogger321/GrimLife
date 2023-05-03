@@ -26,8 +26,6 @@ namespace GrimLife
 
         public void OnMove(InputAction.CallbackContext context)
         {
-            //Debug.Log("Movement input: " + context);
-
             movementInput = context.ReadValue<Vector2>();
         }
 
