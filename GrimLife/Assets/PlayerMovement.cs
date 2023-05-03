@@ -53,7 +53,7 @@
         {
             MovePlayer();
         }
-        void OnJump()
+        public void OnJump()
         {
             if (readyToJump && grounded)
             {
