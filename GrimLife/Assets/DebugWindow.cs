@@ -92,9 +92,10 @@ namespace GrimLife
 
         string PlayerStandingOn()
         {
+            float raycastDistance = objectToMeasure.GetComponent<PlayerMovement>().playerHeight; // Set the distance to be just long enough to touch the ground
             RaycastHit hit;
 
-            if (Physics.Raycast(objectToMeasure.transform.position, Vector3.down, out hit))
+            if (Physics.Raycast(objectToMeasure.transform.position, Vector3.down, out hit, raycastDistance))
             {
                 if (hit.transform.gameObject.layer != LayerMask.NameToLayer("Ignore Raycast"))
                 {
