@@ -8,10 +8,10 @@ namespace GrimLife
     public class ThirdPersonCam : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] private Transform orientation;
         [SerializeField] private Transform player;
-        [SerializeField] private Transform playerObj;
-        [SerializeField] private Rigidbody rb;
+        Transform orientation;
+        Transform playerObj;
+        Rigidbody rb;
 
         public float rotationSpeed = 3f;
 
@@ -22,6 +22,11 @@ namespace GrimLife
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+            playerObj = player.GetChild(0);
+            orientation = player.GetChild(1);
+            rb = player.GetComponent<Rigidbody>();
         }
 
         public void OnMove(InputAction.CallbackContext context)
