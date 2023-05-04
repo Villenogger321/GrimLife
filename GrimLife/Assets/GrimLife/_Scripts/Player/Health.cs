@@ -46,23 +46,23 @@ public class Health : MonoBehaviour
         // set health ui to health - _damage
         if (health - _damage <= 0)
         {
-            /// player death sound
+            /// sfx player death sound
             SceneManager.LoadScene(0);
         }
         else
         {
-            // player damage sound
+            // sfx player damage sound
         }
     }
     void EnemyTakeDamage(float _damage)
     {
         if (health - _damage <= 0)
         {
-            // enemy death sound
+            // sfx enemy death sound
         }
         else
         {
-            // enemy damage sound
+            // sfx enemy damage sound
         }
     }
     public void GiveHealth(int _health)
