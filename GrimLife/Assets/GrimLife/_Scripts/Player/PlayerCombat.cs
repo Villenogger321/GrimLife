@@ -11,28 +11,29 @@ public class PlayerCombat : MonoBehaviour
     float lastComboEnd;
     int comboCount;
     int damage;
-        
+    bool readyToHit = true;
+
     Animator anim;
 
-    // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         ExitAttack();
     }
     void Attack()
     {
-        if (Time.time - lastComboEnd > 0.5f && comboCount <= Combo.Count)
+        if (Time.time - lastComboEnd > .75f && comboCount <= Combo.Count)
         {
             CancelInvoke("EndCombo");
+            AnimatorStateInfo animStateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
-            if (Time.time - lastClickedTime >= .2f)
+            if (readyToHit)
             {
+                readyToHit = false;
                 anim.runtimeAnimatorController = Combo[comboCount].animatorOV;
                 anim.Play("Attack", 0, 0);
 
@@ -56,12 +57,13 @@ public class PlayerCombat : MonoBehaviour
     {
         comboCount = 0;
         lastComboEnd = Time.time;
+        readyToHit = true;
     }
     void OnFire()
     {
         Attack();
     }
-    public void CalculateHit()
+    void CalculateHit()
     {
         Collider[] damageAble = Physics.OverlapBox(transform.position + transform.forward * 1.5f, new Vector3(1f, 1.5f, 1f),
             transform.rotation, hitMask);
@@ -74,7 +76,10 @@ public class PlayerCombat : MonoBehaviour
             }
         }
     }
-
+    void ResetHitCooldown()
+    {
+        readyToHit = true;
+    }
 
     private void OnDrawGizmos()
     {
