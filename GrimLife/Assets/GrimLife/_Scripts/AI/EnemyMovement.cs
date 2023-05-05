@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -15,9 +16,13 @@ public class EnemyMovement : MonoBehaviour
     float curTimer;
     [SerializeField] float minWaitingTime, maxWaitingTime;
     [SerializeField] float wanderingRadius;
+    [SerializeField] LayerMask groundMask;
     Vector3 startPos, wanderingDestination;
 
+    public GameObject tempCube;
+
     Animator anim;
+    NavMeshAgent agent;
     Transform player;
 
     void Start()
@@ -28,6 +33,7 @@ public class EnemyMovement : MonoBehaviour
     void Awake()
     {
         anim = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
     void Update()
@@ -60,15 +66,22 @@ public class EnemyMovement : MonoBehaviour
         {
             state = EnemyAIState.wandering;
             curTimer = Random.Range(minWaitingTime, maxWaitingTime);
-            wanderingDestination = startPos + GetWanderingDestination();
+
+            if (wanderingDestination == new Vector3())
+            {
+                wanderingDestination = startPos;
+                return;
+            }
+            
+            wanderingDestination = GetWanderingDestination();
         }
     }
     void HandleWanderingState()
     {
-        if (Vector3.Distance(transform.position, wanderingDestination) <= 0.1f)
+        if (Vector3.Distance(transform.position, wanderingDestination) <= 0.75f)
             state = EnemyAIState.idle;
 
-        Vector3 wanderingDir = wanderingDestination - transform.position;
+        //Vector3 wanderingDir = wanderingDestination - transform.position;
     }
     void HandleChasingState()
     {
@@ -109,14 +122,22 @@ public class EnemyMovement : MonoBehaviour
     }
     void WalkTowards(Vector3 _destination)
     {
-        transform.position += movementSpeed * Time.deltaTime * (_destination - transform.position).normalized;
+        agent.SetDestination(_destination);
+        //transform.position += movementSpeed * Time.deltaTime * (_destination - transform.position).normalized;
     }
     Vector3 GetWanderingDestination()
     {
-        Vector3 destination = new Vector3(Random.Range(-1, 1), Random.Range(-1, 1));
-        destination.Normalize();
+        Vector3 destination = new Vector3(Random.Range(-wanderingRadius, wanderingRadius), 20,
+                                          Random.Range(-wanderingRadius, wanderingRadius));
 
-        return Random.Range(0, wanderingRadius) * destination;
+        RaycastHit hit;
+        Vector3 finalDestination = new Vector3();
+        if (Physics.Raycast(startPos + destination, Vector3.down, out hit, Mathf.Infinity, groundMask))
+        {
+            Debug.DrawRay(destination, Vector3.down * hit.distance, Color.yellow);
+            finalDestination = hit.point;
+        }
+        return finalDestination;
     }
     public float GetAttackRange()
     {
