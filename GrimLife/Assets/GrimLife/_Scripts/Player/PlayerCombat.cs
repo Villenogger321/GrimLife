@@ -14,10 +14,12 @@ public class PlayerCombat : MonoBehaviour
     bool readyToHit = true;
 
     Animator anim;
+    PlayerCombatScore playerCombatScore;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        playerCombatScore = GetComponent<PlayerCombatScore>();
     }
 
     void Update()
@@ -34,10 +36,10 @@ public class PlayerCombat : MonoBehaviour
             if (readyToHit)
             {
                 readyToHit = false;
-                anim.runtimeAnimatorController = Combo[comboCount].animatorOV;
+                anim.runtimeAnimatorController = Combo[comboCount].AnimatorOV;
                 anim.Play("Attack", 0, 0);
 
-                damage = Combo[comboCount].damage;
+                damage = Combo[comboCount].Damage;
                 // attack effects and sounds also go here
 
                 comboCount++;
@@ -73,6 +75,9 @@ public class PlayerCombat : MonoBehaviour
             if (damageAble[i].GetComponent<Health>() is Health damageAbleHealth)
             {
                 damageAbleHealth.TakeDamage(damage);
+
+                if (damageAble[i].CompareTag("Enemy"))
+                    playerCombatScore.CalculateCombatScore(Combo[comboCount]);
             }
         }
     }

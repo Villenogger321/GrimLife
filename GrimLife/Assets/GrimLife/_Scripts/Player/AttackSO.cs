@@ -5,7 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Attacks/New Attack")]
 public class AttackSO : ScriptableObject
 {
-    public AnimatorOverrideController animatorOV;
-    public int damage;
+    public AnimatorOverrideController AnimatorOV;
+    public int Damage;
+    public int ScoreReward;
 }
 
