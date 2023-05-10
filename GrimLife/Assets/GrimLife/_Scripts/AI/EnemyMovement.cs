@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -15,9 +16,11 @@ public class EnemyMovement : MonoBehaviour
     float curTimer;
     [SerializeField] float minWaitingTime, maxWaitingTime;
     [SerializeField] float wanderingRadius;
+    [SerializeField] LayerMask groundMask;
     Vector3 startPos, wanderingDestination;
 
     Animator anim;
+    NavMeshAgent agent;
     Transform player;
 
     void Start()
@@ -28,6 +31,7 @@ public class EnemyMovement : MonoBehaviour
     void Awake()
     {
         anim = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
     void Update()
@@ -49,6 +53,9 @@ public class EnemyMovement : MonoBehaviour
             case EnemyAIState.attacking:
                 HandleAttackingState();
                 break;
+            case EnemyAIState.backing:
+                HandleBackingState();
+                break;
         }
         attackTimer -= Time.deltaTime;
     }
@@ -60,63 +67,85 @@ public class EnemyMovement : MonoBehaviour
         {
             state = EnemyAIState.wandering;
             curTimer = Random.Range(minWaitingTime, maxWaitingTime);
-            wanderingDestination = startPos + GetWanderingDestination();
+
+            if (wanderingDestination == new Vector3())
+            {
+                wanderingDestination = startPos;
+                return;
+            }
+            
+            wanderingDestination = GetWanderingDestination();
         }
     }
     void HandleWanderingState()
     {
-        if (Vector3.Distance(transform.position, wanderingDestination) <= 0.1f)
+        if (Vector3.Distance(transform.position, wanderingDestination) <= 0.75f)
             state = EnemyAIState.idle;
-
-        Vector3 wanderingDir = wanderingDestination - transform.position;
     }
     void HandleChasingState()
     {
-        if (Vector3.Distance(transform.position, player.position) < attackRadius)
+        if (playerDistance() < attackRadius)
         {
             state = EnemyAIState.attacking;
-
-            if (Vector3.Distance(transform.position, player.position) < stopRadius)
-            {
-                if (attackTimer > 0)
-                    state = EnemyAIState.idle;
-                return;
-            }
+            return;
         }
 
-
         WalkTowards(player.position);
-
-        Vector3 playerDir = player.position - transform.position;
     }
     void HandleAttackingState()
     {
-        // start anim
-        if (attackTimer > 0)
+        if (attackTimer <= 0)
+        {
+            print("attacked");
+            attackTimer = attackCooldown;
+        }
+        state = EnemyAIState.backing;
+    }
+    void HandleBackingState()
+    {
+        if (attackTimer <= 0)
         {
             state = EnemyAIState.chasing;
             return;
         }
 
-        attackTimer = attackCooldown;
+        Vector3 dir = (transform.position - player.position).normalized;
+        Vector3 destination = player.position + (dir * stopRadius);
+
+        transform.rotation = Quaternion.LookRotation(new Vector3(-dir.x, 0, -dir.z));
+
+
+        WalkTowards(destination, 0);
     }
     void CheckForAggroToPlayer()
     {
-        if (Vector3.Distance(transform.position, player.position) < detectionRadius)
+        if (playerDistance() < detectionRadius)
         {
             state = EnemyAIState.chasing;
         }
     }
-    void WalkTowards(Vector3 _destination)
+    void WalkTowards(Vector3 _destination, int _angularSpeed = 120)
     {
-        transform.position += movementSpeed * Time.deltaTime * (_destination - transform.position).normalized;
+        agent.angularSpeed = _angularSpeed;
+        agent.SetDestination(_destination);
     }
     Vector3 GetWanderingDestination()
     {
-        Vector3 destination = new Vector3(Random.Range(-1, 1), Random.Range(-1, 1));
-        destination.Normalize();
+        Vector3 destination = new Vector3(Random.Range(-wanderingRadius, wanderingRadius), 20,
+                                          Random.Range(-wanderingRadius, wanderingRadius));
 
-        return Random.Range(0, wanderingRadius) * destination;
+        RaycastHit hit;
+        Vector3 finalDestination = new Vector3();
+        if (Physics.Raycast(startPos + destination, Vector3.down, out hit, Mathf.Infinity, groundMask))
+        {
+            Debug.DrawRay(destination, Vector3.down * hit.distance, Color.yellow);
+            finalDestination = hit.point;
+        }
+        return finalDestination;
+    }
+    float playerDistance()
+    {
+        return Vector3.Distance(transform.position, player.position);
     }
     public float GetAttackRange()
     {
@@ -131,7 +160,8 @@ public class EnemyMovement : MonoBehaviour
         idle,
         wandering,
         chasing,
-        attacking
+        attacking,
+        backing
     }
     void OnDrawGizmosSelected()
     {
@@ -142,9 +172,9 @@ public class EnemyMovement : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
 
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(new Vector3(
-            transform.position.x,
-            transform.position.y,
-            transform.position.z), attackRadius);
+        Gizmos.DrawWireSphere(transform.position, attackRadius);
+
+        Gizmos.color = Color.gray;
+        Gizmos.DrawWireSphere(transform.position, stopRadius);
     }
 }
