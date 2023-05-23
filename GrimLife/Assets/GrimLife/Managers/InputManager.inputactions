@@ -295,6 +295,45 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Managers",
+            "id": "8f0dcccd-534e-4437-9d74-d46d4b096ccd",
+            "actions": [
+                {
+                    "name": "SkipText",
+                    "type": "Button",
+                    "id": "dde57950-de8f-493f-a8e1-e0c1777291a8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "dddce7ee-2848-48ee-8d7c-e8517460dbc6",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkipText",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a2108cfa-1231-4583-a0e0-9168460a6074",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkipText",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

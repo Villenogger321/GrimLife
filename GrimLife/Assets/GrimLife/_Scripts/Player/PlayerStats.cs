@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public static Transform Player;
+    public static PlayerStats Player;
     void Awake()
     {
-        Player = transform;
+        Player = this;
     }
 
 }

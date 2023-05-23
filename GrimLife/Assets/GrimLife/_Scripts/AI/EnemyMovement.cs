@@ -25,7 +25,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Start()
     {
-        player = PlayerStats.Player;
+        player = PlayerStats.Player.transform;
         startPos = transform.position;
     }
     void Awake()

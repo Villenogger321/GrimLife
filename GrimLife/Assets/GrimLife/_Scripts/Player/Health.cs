@@ -71,5 +71,9 @@ public class Health : MonoBehaviour
         if (health > maxHealth)
             health = maxHealth;
     }
+
+    public float GetCurrentHealth() => health;
+
+    public float GetMaxHealth() => maxHealth;
 }
 

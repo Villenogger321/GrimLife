@@ -59,6 +59,7 @@ public class PlayerCombat : MonoBehaviour
     {
         comboCount = 0;
         lastComboEnd = Time.time;
+        playerCombatScore.EndCombatCombo();
         readyToHit = true;
     }
     void OnFire()
