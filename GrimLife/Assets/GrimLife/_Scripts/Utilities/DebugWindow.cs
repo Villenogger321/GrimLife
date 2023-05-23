@@ -69,7 +69,10 @@ namespace GrimLife
             speed = distanceTraveled / Time.deltaTime;
             previousPosition = currentPosition;
 
-            UpdateDebugInfo("Speed", "Object speed: " + speed.ToString("0.00"));
+            if (speed > 0.1f)
+            {
+                UpdateDebugInfo("Speed", "Object speed: " + speed.ToString("0.00"));
+            }
         }
 
         void UpdateCanJumpDebugInfo()
