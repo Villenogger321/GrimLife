@@ -157,7 +157,7 @@ MonoBehaviour:
       Value: 0
       HasValue: 0
     Overlay:
-      Value: 1
+      Value: 0
       HasValue: 1
     Logging:
       Value: 0
@@ -525,17 +525,17 @@ MonoBehaviour:
   HideSetupWizard: 0
   LastEventReferenceScanVersion: 131603
   Platforms:
-  - {fileID: -5353101761027958283}
-  - {fileID: 1551060664842672342}
-  - {fileID: -2766230407889507123}
-  - {fileID: 9186201793524550230}
   - {fileID: -6310459554906672535}
-  - {fileID: 7417422682514169801}
-  - {fileID: -4882986805813264780}
-  - {fileID: 450048550840109088}
-  - {fileID: -750814012084791192}
   - {fileID: -6086598477098143662}
+  - {fileID: -5353101761027958283}
+  - {fileID: -4882986805813264780}
   - {fileID: -4823577112468279623}
+  - {fileID: -2766230407889507123}
+  - {fileID: -750814012084791192}
+  - {fileID: 450048550840109088}
+  - {fileID: 1551060664842672342}
+  - {fileID: 7417422682514169801}
+  - {fileID: 9186201793524550230}
   MigratedPlatforms: 0c000000150000000b0000000a00000009000000120000000800000005000000060000000200000001000000
 --- !u!114 &450048550840109088
 MonoBehaviour:
@@ -639,8 +639,8 @@ MonoBehaviour:
       Value: 
       HasValue: 0
     SpeakerMode:
-      Value: 0
-      HasValue: 0
+      Value: 3
+      HasValue: 1
     VirtualChannelCount:
       Value: 0
       HasValue: 0
@@ -668,15 +668,15 @@ MonoBehaviour:
     HasValue: 0
   displaySortOrder: 0
   childIdentifiers:
-  - c88d16e5272a4e241b0ef0ac2e53b73d
-  - fd7c55dab0fce234b8c25f6ffca523c1
   - 2c5177b11d81d824dbb064f9ac8527da
-  - e7a046c753c3c3d4aacc91f6597f310d
-  - 52eb9df5db46521439908db3a29a1bbb
-  - b7716510a1f36934c87976f3a81dbf3d
-  - 0f8eb3f400726694eb47beb1a9f94ce8
   - 46fbfdf3fc43db0458918377fd40293e
+  - 52eb9df5db46521439908db3a29a1bbb
   - 2fea114e74ecf3c4f920e1d5cc1c4c40
+  - c88d16e5272a4e241b0ef0ac2e53b73d
+  - 0f8eb3f400726694eb47beb1a9f94ce8
+  - b7716510a1f36934c87976f3a81dbf3d
+  - e7a046c753c3c3d4aacc91f6597f310d
+  - fd7c55dab0fce234b8c25f6ffca523c1
   codecChannels:
     Value: []
     HasValue: 0
