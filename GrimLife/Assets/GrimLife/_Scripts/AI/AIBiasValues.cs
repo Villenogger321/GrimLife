@@ -56,6 +56,10 @@ public class AIBiasValues : MonoBehaviour
 
         return (int)(_biasValue * _curve.Evaluate(_input));
     }
+    public void SetAttackTimestamp(float _time)
+    {
+        attackTimeStamp = _time;
+    }
 }
 public static class Helper
 {

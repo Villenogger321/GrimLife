@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,6 +11,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float detectionRadius, stopRadius, attackRadius;
     [SerializeField] EnemyAIState state;
     [SerializeField] float attackCooldown;
+    bool addedToFight;
     float attackTimer;
 
     [Header("Wandering")]
@@ -22,6 +24,7 @@ public class EnemyMovement : MonoBehaviour
     Animator anim;
     NavMeshAgent agent;
     Transform player;
+    AIBiasValues aiBiasValues;
 
     void Start()
     {
@@ -32,6 +35,7 @@ public class EnemyMovement : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+        aiBiasValues = GetComponent<AIBiasValues>();
     }
 
     void Update()
@@ -49,6 +53,9 @@ public class EnemyMovement : MonoBehaviour
                 break;
             case EnemyAIState.chasing:
                 HandleChasingState();
+                break;
+            case EnemyAIState.prepareAttack:
+                HandlePrepareAttackState();
                 break;
             case EnemyAIState.attacking:
                 HandleAttackingState();
@@ -84,19 +91,28 @@ public class EnemyMovement : MonoBehaviour
     }
     void HandleChasingState()
     {
+        if (playerDistance() < stopRadius)
+        {
+            //state = EnemyAIState.attacking;
+            return;
+        }
+
+        WalkTowards(player.position);
+    }
+    void HandlePrepareAttackState()
+    {
         if (playerDistance() < attackRadius)
         {
             state = EnemyAIState.attacking;
             return;
         }
-
         WalkTowards(player.position);
     }
     void HandleAttackingState()
     {
         if (attackTimer <= 0)
         {
-            print("attacked");
+            aiBiasValues.SetAttackTimestamp(Time.time);
             attackTimer = attackCooldown;
         }
         state = EnemyAIState.backing;
@@ -122,6 +138,7 @@ public class EnemyMovement : MonoBehaviour
         if (playerDistance() < detectionRadius)
         {
             state = EnemyAIState.chasing;
+            AIManager.AddAggroedEnemy(this);
         }
     }
     void WalkTowards(Vector3 _destination, int _angularSpeed = 120)
@@ -143,6 +160,30 @@ public class EnemyMovement : MonoBehaviour
         }
         return finalDestination;
     }
+    void OnDisable()
+    {
+        AIManager.RemoveAggroedEnemy(this);
+
+        return;
+    }
+    public void SignalPrepareAttack()
+    {
+        if (state == EnemyAIState.attacking)
+            return;
+
+        state = EnemyAIState.prepareAttack;
+    }
+    public int GetBiasValue()
+    {
+        if (state == (EnemyAIState.attacking | EnemyAIState.prepareAttack))
+        {
+            Debug.Log("zeo");
+            return 0;
+        }
+
+        return aiBiasValues.CalculateBias();
+    }
+
     float playerDistance()
     {
         return Vector3.Distance(transform.position, player.position);
@@ -160,6 +201,7 @@ public class EnemyMovement : MonoBehaviour
         idle,
         wandering,
         chasing,
+        prepareAttack,
         attacking,
         backing
     }
