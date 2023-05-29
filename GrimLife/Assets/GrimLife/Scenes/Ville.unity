@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2160.0947, g: 2264.5137, b: 3287.914, a: 1}
+  m_IndirectSpecularColor: {r: 2160.1104, g: 2264.5137, b: 3287.914, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1245,7 +1245,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406846559}
-  m_LocalRotation: {x: 0.09252102, y: 0.00000001765986, z: -0.0000000016409466, w: 0.99571073}
+  m_LocalRotation: {x: 0.09252102, y: -0.00000001766246, z: 0.0000000016411884, w: 0.99571073}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1636,7 +1636,7 @@ MonoBehaviour:
   stopRadius: 5
   attackRadius: 2
   state: 0
-  attackCooldown: 2
+  attackCooldown: 6
   minWaitingTime: 2
   maxWaitingTime: 10
   wanderingRadius: 3
@@ -2188,7 +2188,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822298790}
-  m_LocalRotation: {x: 0.13870122, y: 1e-45, z: -0, w: 0.99033433}
+  m_LocalRotation: {x: 0.1387012, y: -1.9627712e-29, z: 2.6476395e-30, w: 0.99033433}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2304,7 +2304,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977520829}
-  m_LocalRotation: {x: 0.04763198, y: 1e-45, z: -0, w: 0.99886495}
+  m_LocalRotation: {x: 0.04763198, y: -1e-45, z: -0, w: 0.99886495}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3370,6 +3370,7 @@ GameObject:
   - component: {fileID: 1561303621}
   - component: {fileID: 1561303622}
   - component: {fileID: 1561303623}
+  - component: {fileID: 1561303624}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3455,6 +3456,23 @@ MonoBehaviour:
   m_DefaultActionMap: Managers
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1561303624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561303619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c341df3daac5a4282c2e35abc6916c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aggroedEnemies: []
+  attackTimer: 0
+  chanceToAttack: 20
+  currentChanceToAttack: 20
+  chanceIncrease: 5
 --- !u!1 &2013410473
 GameObject:
   m_ObjectHideFlags: 1
