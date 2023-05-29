@@ -25,12 +25,14 @@
         Vector3 moveDirection;
         float xRotation;
         Rigidbody rb;
-
+        Animator animator;
 
         private void Start()
         {
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
+        
+            animator = GetComponent<Animator>();
 
             readyToJump = true;
         }
@@ -40,14 +42,19 @@
             // ground check
             grounded = CheckGrounded();
 
-        SpeedControl();
+            SpeedControl();
 
             // handle drag
             if (grounded)
                 rb.drag = groundDrag;
             else
                 rb.drag = 0;
-        }
+
+            bool isMoving = rb.velocity.magnitude > 0.1f;
+
+            animator.SetBool("IsRunning", isMoving);
+            Debug.Log("IsRunning: " + isMoving);
+    }
 
         private void FixedUpdate()
         {
