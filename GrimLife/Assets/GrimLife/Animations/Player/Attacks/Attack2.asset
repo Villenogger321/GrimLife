@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimatorOV: {fileID: 22100000, guid: 3fac3a0b96934c54ab351fd58e8d537d, type: 2}
   Damage: 8
-  ScoreReward: 300
+  ScoreReward: 200

@@ -1,0 +1,13 @@
+1
+1 +(1.5) = 2.5
+1
+1
+1
+
+0-6.5
+
+0-1 1-3.5
+
+total värde - bias värde på current index, om negativt är det den :-)
+
+enemy slår t.ex 1-3 slag varje gång den går emot spelaren. 
