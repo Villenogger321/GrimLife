@@ -4381,6 +4381,10 @@ PrefabInstance:
       propertyPath: m_Avatar
       value: 
       objectReference: {fileID: 9000000, guid: bb1d1df8d87e7934dba503e8ab6d1f8a, type: 3}
+    - target: {fileID: 4936717138942500987, guid: 84ab56042405d4c409b5a8c1e5da023c, type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 983482508876508661, guid: 84ab56042405d4c409b5a8c1e5da023c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 84ab56042405d4c409b5a8c1e5da023c, type: 3}
