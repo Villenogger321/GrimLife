@@ -52,7 +52,6 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("IsJumping", isJumping);
         animator.SetFloat("Horizontal", movementInput.x);
         animator.SetFloat("Vertical", movementInput.y);
-        Debug.Log("Horizontal " + movementInput.x);
 
         if (!grounded && !hasStartedJumpAnimation)
         {

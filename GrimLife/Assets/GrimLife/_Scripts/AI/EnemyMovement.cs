@@ -91,12 +91,14 @@ public class EnemyMovement : MonoBehaviour
     }
     void HandleChasingState()
     {
+        Debug.Log("Enemy Chasing Animation");
+        anim.SetBool("Chase", true);
         if (playerDistance() < stopRadius)
         {
             //state = EnemyAIState.attacking;
+            anim.SetBool("Chase", false);
             return;
         }
-
         WalkTowards(player.position);
     }
     void HandlePrepareAttackState()
@@ -110,12 +112,17 @@ public class EnemyMovement : MonoBehaviour
     }
     void HandleAttackingState()
     {
+        Debug.Log("HandleAttackingState");
         if (attackTimer <= 0)
         {
             aiBiasValues.SetAttackTimestamp(Time.time);
             attackTimer = attackCooldown;
         }
         state = EnemyAIState.backing;
+
+        Debug.Log("Enemy Attacking Animation");
+        anim.SetTrigger("Attack");
+
     }
     void HandleBackingState()
     {
