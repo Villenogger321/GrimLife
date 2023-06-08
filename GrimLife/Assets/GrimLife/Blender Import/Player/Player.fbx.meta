@@ -159,20 +159,20 @@ ModelImporter:
       will be discarded.\n\t'DEF-shin.R' has scale animation that will be discarded.\n\t'DEF-foot.R'
       has scale animation that will be discarded.\n\nClip 'Armature|Strafe_L' has
       import animation warnings that might lower retargeting quality:\nNote: Activate
-      translation DOF on avatar to improve retargeting quality.\n\t'DEF-spine.003'
-      has scale animation that will be discarded.\n\t'DEF-spine.004' has scale animation
-      that will be discarded.\n\t'DEF-upper_arm.L' has translation animation that
-      will be discarded.\n\t'DEF-upper_arm.L' has scale animation that will be discarded.\n\t'DEF-forearm.L'
-      has scale animation that will be discarded.\n\t'DEF-hand.L' has scale animation
-      that will be discarded.\n\t'DEF-upper_arm.R' has translation animation that
-      will be discarded.\n\t'DEF-upper_arm.R' has scale animation that will be discarded.\n\t'DEF-forearm.R'
-      has scale animation that will be discarded.\n\t'DEF-hand.R' has scale animation
-      that will be discarded.\n\t'DEF-thigh.L' has translation animation that will
-      be discarded.\n\t'DEF-thigh.L' has scale animation that will be discarded.\n\t'DEF-shin.L'
-      has scale animation that will be discarded.\n\t'DEF-foot.L' has scale animation
-      that will be discarded.\n\t'DEF-thigh.R' has translation animation that will
-      be discarded.\n\t'DEF-thigh.R' has scale animation that will be discarded.\n\t'DEF-shin.R'
-      has scale animation that will be discarded.\n\t'DEF-foot.R' has scale animation
+      translation DOF on avatar to improve retargeting quality.\n\t'DEF-upper_arm.L'
+      has translation animation that will be discarded.\n\t'DEF-upper_arm.L' has
+      scale animation that will be discarded.\n\t'DEF-forearm.L' has scale animation
+      that will be discarded.\n\t'DEF-hand.L' has scale animation that will be discarded.\n\t'DEF-upper_arm.R'
+      has translation animation that will be discarded.\n\t'DEF-upper_arm.R' has
+      scale animation that will be discarded.\n\t'DEF-forearm.R' has scale animation
+      that will be discarded.\n\t'DEF-hand.R' has scale animation that will be discarded.\n\t'DEF-thigh.L'
+      has translation animation that will be discarded.\n\t'DEF-thigh.L' has scale
+      animation that will be discarded.\n\t'DEF-shin.L' has scale animation that
+      will be discarded.\n\t'DEF-foot.L' has scale animation that will be discarded.\n\t'DEF-toe.L'
+      has scale animation that will be discarded.\n\t'DEF-thigh.R' has translation
+      animation that will be discarded.\n\t'DEF-thigh.R' has scale animation that
+      will be discarded.\n\t'DEF-shin.R' has scale animation that will be discarded.\n\t'DEF-foot.R'
+      has scale animation that will be discarded.\n\t'DEF-toe.R' has scale animation
       that will be discarded.\n\nClip 'Armature|Strafe_R' has import animation warnings
       that might lower retargeting quality:\nNote: Activate translation DOF on avatar
       to improve retargeting quality.\n\t'DEF-upper_arm.L' has translation animation
@@ -620,7 +620,7 @@ ModelImporter:
       name: Armature|Sword
       takeName: Armature|Sword
       internalID: 5742821250385941965
-      firstFrame: 0
+      firstFrame: 17
       lastFrame: 61
       wrapMode: 0
       orientationOffsetY: 0
@@ -628,7 +628,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
