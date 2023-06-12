@@ -92,6 +92,7 @@ public class EnemyMovement : MonoBehaviour
     void HandleChasingState()
     {
         anim.SetBool("Chase", true);
+        anim.ResetTrigger("NextAttack");
         if (playerDistance() < stopRadius)
         {
             //state = EnemyAIState.attacking;
@@ -118,7 +119,7 @@ public class EnemyMovement : MonoBehaviour
         }
         state = EnemyAIState.backing;
 
-        anim.SetTrigger("Attack");
+        anim.SetTrigger("NextAttack");
 
     }
     void HandleBackingState()
