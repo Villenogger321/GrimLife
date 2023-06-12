@@ -55,7 +55,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (!grounded && !hasStartedJumpAnimation)
         {
-            Debug.Log("Jumping");
             animator.SetBool("IsJumping", true);
             hasStartedJumpAnimation = true;
         }
