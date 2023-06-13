@@ -1,5 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7500194345396810112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Test/Test
+  m_EditorClassIdentifier: 
+  Path: event:/Test/Test
+  Guid:
+    Data1: -323645526
+    Data2: 1171811610
+    Data3: 2118099857
+    Data4: 407080579
+  Banks:
+  - {fileID: 1185660862453214619}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 407144
+--- !u!114 &-6722409713083500679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Movement/Dodge
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Movement/Dodge
+  Guid:
+    Data1: 363644616
+    Data2: 1221009175
+    Data3: -2041692498
+    Data4: -1523645732
+  Banks:
+  - {fileID: 5095374506353241067}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-4477749225150801939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20,6 +74,78 @@ MonoBehaviour:
   - Name: 
     Value: 800
   Exists: 1
+--- !u!114 &-4068602588320135060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Attacks/AttackHit
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Attacks/AttackHit
+  Guid:
+    Data1: 369231589
+    Data2: 1250867102
+    Data3: 392103840
+    Data4: -351090066
+  Banks:
+  - {fileID: 5095374506353241067}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3891482015904419058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODBanks/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 638222608940193885
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-3459423530877288438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Attacks/AttackShout
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Attacks/AttackShout
+  Guid:
+    Data1: -284457741
+    Data2: 1225343840
+    Data3: 2024029066
+    Data4: 77872507
+  Banks:
+  - {fileID: 5095374506353241067}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-1449955364862451669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35,10 +161,10 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638203443710091404
+  lastModified: 638222681876579860
   FileSizes:
   - Name: 
-    Value: 800
+    Value: 1390
   Exists: 1
 --- !u!114 &-124650662555502049
 MonoBehaviour:
@@ -74,15 +200,53 @@ MonoBehaviour:
   - {fileID: -1449955364862451669}
   - {fileID: 5095374506353241067}
   - {fileID: 1185660862453214619}
+  - {fileID: -3891482015904419058}
+  - {fileID: 2835460944142655498}
   EditorEvents:
-  - {fileID: 8336378560492568516}
+  - {fileID: 6105147784695593033}
+  - {fileID: -6722409713083500679}
+  - {fileID: 5107936295462095498}
+  - {fileID: -4068602588320135060}
+  - {fileID: -3459423530877288438}
+  - {fileID: 8087671614094691542}
+  - {fileID: 441889182866807175}
+  - {fileID: -7500194345396810112}
+  - {fileID: 2378520550560347997}
   EditorParameters: []
   MasterBanks:
   - {fileID: 5095374506353241067}
   StringsBanks:
   - {fileID: -1449955364862451669}
-  cacheTime: 638203443710581451
+  cacheTime: 638222709672758474
   cacheVersion: 131603
+--- !u!114 &441889182866807175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/The Medical Facility
+  m_EditorClassIdentifier: 
+  Path: event:/Music/The Medical Facility
+  Guid:
+    Data1: 1626185368
+    Data2: 1238268890
+    Data3: 1529184946
+    Data4: 885022293
+  Banks:
+  - {fileID: -3891482015904419058}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 3751101439717316153}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 236196
 --- !u!114 &1185660862453214619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,7 +262,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Test.bank
   Name: Test
   StudioPath: bank:/Test
-  lastModified: 638203443710581451
+  lastModified: 638222608940741834
   FileSizes: []
   Exists: 1
 --- !u!114 &1887225025665384056
@@ -128,6 +292,52 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 407144
+--- !u!114 &2378520550560347997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Movement/Footstep
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Movement/Footstep
+  Guid:
+    Data1: 421178137
+    Data2: 1328249827
+    Data3: 452685757
+    Data4: 333093054
+  Banks:
+  - {fileID: 2835460944142655498}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 7041803024014411415}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2835460944142655498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODBanks/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638222709672758474
+  FileSizes: []
+  Exists: 1
 --- !u!114 &3144180922818821274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +356,30 @@ MonoBehaviour:
   lastModified: 638209448576780799
   FileSizes: []
   Exists: 1
+--- !u!114 &3751101439717316153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/The Medical Facility/Combat
+  m_EditorClassIdentifier: 
+  Name: Combat
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1728321690
+    data2: 4205552776
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &5095374506353241067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,10 +395,10 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638203443710091404
+  lastModified: 638222681876566759
   FileSizes: []
   Exists: 1
---- !u!114 &8336378560492568516
+--- !u!114 &5107936295462095498
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,20 +408,103 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Test
+  m_Name: event:/Player/PlayerHurt
   m_EditorClassIdentifier: 
-  Path: event:/Test
+  Path: event:/Player/PlayerHurt
   Guid:
-    Data1: -323645526
-    Data2: 1171811610
-    Data3: 2118099857
-    Data4: 407080579
+    Data1: 1269808334
+    Data2: 1164198900
+    Data3: -1167259772
+    Data4: -1753757915
   Banks:
-  - {fileID: 1185660862453214619}
-  IsStream: 1
-  Is3D: 0
+  - {fileID: 5095374506353241067}
+  IsStream: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 407144
+  Length: 0
+--- !u!114 &6105147784695593033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Attacks/Swing
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Attacks/Swing
+  Guid:
+    Data1: -1048429791
+    Data2: 1079118776
+    Data3: -1702320218
+    Data4: 1910381310
+  Banks:
+  - {fileID: 5095374506353241067}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7041803024014411415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footstep/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 2319102106
+    data2: 172047011
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Default
+  - Gravel
+  - Stone
+  - Wood
+  Exists: 1
+--- !u!114 &8087671614094691542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Movement/Jump
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Movement/Jump
+  Guid:
+    Data1: -186033154
+    Data2: 1324335390
+    Data3: 347918015
+    Data4: -703493758
+  Banks:
+  - {fileID: 5095374506353241067}
+  - {fileID: 2835460944142655498}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500

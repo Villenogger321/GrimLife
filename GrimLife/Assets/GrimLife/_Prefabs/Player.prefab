@@ -620,6 +620,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 72
   grounded: 1
+  hasStartedJumpAnimation: 0
+  jumpAudio:
+    Guid:
+      Data1: -186033154
+      Data2: 1324335390
+      Data3: 347918015
+      Data4: -703493758
+    Path: event:/Player/Movement/Jump
 --- !u!114 &4936717138942500991
 MonoBehaviour:
   m_ObjectHideFlags: 0

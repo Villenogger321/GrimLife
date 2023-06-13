@@ -26,6 +26,12 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
     Animator animator;
 
+    [Header("Audio")]
+    public FMODUnity.EventReference jumpAudio;
+    public FMODUnity.EventReference footstepAudio;
+
+    public float footstepPlaybackSpeed;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -76,6 +82,8 @@ public class PlayerMovement : MonoBehaviour
         {
             readyToJump = false;
             Jump();
+
+            FMODUnity.RuntimeManager.PlayOneShotAttached(jumpAudio, gameObject);
 
             Invoke(nameof(ResetJump), jumpCooldown);
         }
