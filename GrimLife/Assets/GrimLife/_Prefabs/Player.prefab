@@ -620,6 +620,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 72
   grounded: 1
+  hasStartedJumpAnimation: 0
 --- !u!114 &4936717138942500991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -742,6 +743,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: player fbx
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: bb1d1df8d87e7934dba503e8ab6d1f8a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: bb1d1df8d87e7934dba503e8ab6d1f8a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6e9604fba05314940a6c70ef173ec13d, type: 2}
     - target: {fileID: 8702534868727452905, guid: bb1d1df8d87e7934dba503e8ab6d1f8a, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
