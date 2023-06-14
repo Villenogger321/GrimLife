@@ -3,7 +3,47 @@ guid: d1228f867f3cf59498ae6382a967e534
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_smallhouse.001
+    second: {fileID: 2100000, guid: f454b1c3a56d93d4b809e96b4dcf7a49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Doordrames_smallhouse.001
+    second: {fileID: 2100000, guid: a862b605eadc31041b0b2f19e7c4e591, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pipe_smallhouse.001
+    second: {fileID: 2100000, guid: a2071337defedb34f9a3529723008cdb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Roof_smallhouse.001
+    second: {fileID: 2100000, guid: 13c6ea91e58b6154cb8f96d025759dc7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Roofplate_smallhouse.001
+    second: {fileID: 2100000, guid: 30337ff428716ab4592f2296bfb56989, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stair.001
+    second: {fileID: 2100000, guid: c1cb0d3e753e07040b5858aef20e6ab2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Walls_smallhouse.001
+    second: {fileID: 2100000, guid: 8cb8673828d2ee44fbe15ca34f434b49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Windows_smallhouse.001
+    second: {fileID: 2100000, guid: 30abebc3b7f2332488d50a35e4c8cc66, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

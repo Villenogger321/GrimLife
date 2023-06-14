@@ -3,7 +3,62 @@ guid: fc93c1f210cc5b24782b966ff6882912
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chimney_bighouse.001
+    second: {fileID: 2100000, guid: 9eb2ca8d71ac5774b9db1ec46601d9c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_bighouse.001
+    second: {fileID: 2100000, guid: 24ab8954bf66476458c1d87b10674b20, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Doorframe_bighouse.001
+    second: {fileID: 2100000, guid: 649caf40d95a720499e952a32fc6e1c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Entrance_roof_bighouse.001
+    second: {fileID: 2100000, guid: ddb4d8d19d6509146b45767588a9e579, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fanblades_bighouse.001
+    second: {fileID: 2100000, guid: feb13f08b8d2896439bf886adee492ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fanbox_bighouse.001
+    second: {fileID: 2100000, guid: a529c0a6284768e42916cbc4e7831e8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pillars_bighouse.001
+    second: {fileID: 2100000, guid: 6646160c3ac903a43b5b02139b903753, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Roof_bighouse.001
+    second: {fileID: 2100000, guid: eb8e9dabc86a1f84e8c6fe8b8361f57e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Walls_bighouse.001
+    second: {fileID: 2100000, guid: 999942ff20bebfe47b3ffc9a8dd047ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_bighouse.001
+    second: {fileID: 2100000, guid: 0756852256bb66e42922c478fa170b7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Windowdrames_bighouse.001
+    second: {fileID: 2100000, guid: 2cd3da1aef327304daf8fc2921ded63a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
