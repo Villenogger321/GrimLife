@@ -111,16 +111,15 @@ public class EnemyMovement : MonoBehaviour
         WalkTowards(player.position);
     }
     void HandleAttackingState()
-    {
+    {        
         if (attackTimer <= 0)
         {
+            anim.SetBool("Chase", false);
             aiBiasValues.SetAttackTimestamp(Time.time);
             attackTimer = attackCooldown;
+            anim.SetTrigger("NextAttack");
         }
         state = EnemyAIState.backing;
-
-        anim.SetTrigger("NextAttack");
-
     }
     void HandleBackingState()
     {
@@ -134,7 +133,6 @@ public class EnemyMovement : MonoBehaviour
         Vector3 destination = player.position + (dir * stopRadius);
 
         transform.rotation = Quaternion.LookRotation(new Vector3(-dir.x, 0, -dir.z));
-
 
         WalkTowards(destination, 0);
     }
