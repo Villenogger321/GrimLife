@@ -3,7 +3,12 @@ guid: c8e97ce709fd64b48bf580d60fb22f37
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Walls_Fancyhouse.002
+    second: {fileID: 2100000, guid: dc3255500bbfc4a408cd0cf50d802037, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
