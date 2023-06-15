@@ -22,10 +22,10 @@ MonoBehaviour:
     m_Bits: 128
   outlineSettings:
     outlineColor: {r: 0, g: 0, b: 0, a: 1}
-    outlineScale: 0.8
+    outlineScale: 1.3
     depthThreshold: 3.6
     robertsCrossMultiplier: 25
-    normalThreshold: 0.572
+    normalThreshold: 1
     steepAngleThreshold: 0.2
     steepAngleMultiplier: 10
   viewSpaceNormalsTextureSettings:
