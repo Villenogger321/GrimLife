@@ -14,16 +14,16 @@ public class DialogueManager : MonoBehaviour
     
     [SerializeField, Range(1, 200)] float textSpeed;
 
-    [SerializeField] string[] text;
     bool listeningForInput;
     bool skip;
 
-    private void Start()
+    public static DialogueManager Instance;
+    void Awake()
     {
-        StartDialogue(text);
+        Instance = this;
     }
 
-    async void StartDialogue(string[] _dialogue)
+    public async void StartDialogue(string[] _dialogue)
     {
         dialogueText.gameObject.SetActive(true);
         listeningForInput = true;

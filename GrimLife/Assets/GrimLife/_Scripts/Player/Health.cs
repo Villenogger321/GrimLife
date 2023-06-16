@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Health : MonoBehaviour
     [SerializeField] private int maxHealth = 100;
     public Action OnDeath;
     public Action<int> OnDamage;
+    public Image HealthBar;
 
     public void TakeDamage(int _damage)
     {
@@ -40,6 +42,8 @@ public class Health : MonoBehaviour
     private void Start()
     {
         health = maxHealth;
+        if (transform.CompareTag("Enemy"))
+            SubscribeToDeath(EnemyDied);
     }
     void PlayerTakeDamage(float _damage)
     {
@@ -51,6 +55,7 @@ public class Health : MonoBehaviour
         }
         else
         {
+            HealthBar.fillAmount = ((float)health / (float)maxHealth);
             // sfx player damage sound
         }
     }
@@ -65,6 +70,11 @@ public class Health : MonoBehaviour
             // sfx enemy damage sound
         }
     }
+    void EnemyDied()
+    {
+        PlayerStats.Player.quest.Goal.EnemyKilled();
+    }
+
     public void GiveHealth(int _health)
     {
         health += _health;
